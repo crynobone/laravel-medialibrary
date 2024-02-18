@@ -8,4 +8,4 @@ test('loading an image uses the correct driver', function () {
     $image = ImageFactory::load($this->getTestJpg());
 
     expect($image->driverName())->toBe('imagick');
-});
+})->skip(! extension_loaded('imagick'), 'The imagick extension is not available.');
